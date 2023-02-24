@@ -1,4 +1,8 @@
 const flagModal = new bootstrap.Modal(document.getElementById("flag"), {});
+const gameOverModal = new bootstrap.Modal(
+  document.getElementById("gameOver"),
+  {}
+);
 
 const options = [
   { id: 0, name: "Create", hint: "All data is created somewhere." },
@@ -21,6 +25,10 @@ const options = [
   },
 ];
 
+let seconds = 60;
+let finish = false;
+let lose = false;
+
 const selectStep = (question, answer) => {
   if (question !== answer) {
     $(".current").addClass("wrong");
@@ -36,9 +44,11 @@ const selectStep = (question, answer) => {
 
   if (question === 5) {
     // last question
+    if (lose) return;
     const flag = atob("VEhNe0NMT1VEXzExMTAxfQ==");
     $("#flag-text").text(flag);
     flagModal.toggle();
+    finish = true;
     return;
   }
 
@@ -116,3 +126,22 @@ const copyText = (label = "flag-text", container = "flag-container") => {
     tooltip.setContent({ ".tooltip-inner": "Copy to clipboard" });
   }, 2000);
 };
+
+setInterval(function() {
+  if (finish || lose) return;
+
+  if (seconds > 0) {
+    seconds = seconds - 1;
+    if (seconds <= 10) {
+      $("#clock").addClass("text-danger");
+    }
+    $("#timer").text(`${seconds}s`);
+    return;
+  }
+
+  $("#timer").text("Time Up!");
+  if (seconds == 0) {
+    gameOverModal.toggle();
+    lose = true;
+  }
+}, 1000);
