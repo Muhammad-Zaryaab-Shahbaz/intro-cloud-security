@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Ubuntu");
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+  padding: 0%;
+  margin: 0% !important;
+  background-color: #212c42;
+  color: white;
+}
+:root {
+  --current: #719cf9;
+  --disabled: #d4d8df;
+  --wrong: #eb0037;
+  --correct: #a3ea2a;
+  --thm-dark: #151c2b;
+}
+.header {
+  font-family: "Ubuntu", "Source Sans Pro", sans-serif;
+}
+.logo {
+  max-height: 80px;
+}
+.danger {
+  color: #eb0037;
+}
+.thm-bg-dark {
+  background-color: var(--thm-dark);
+}
+.thm-text-success {
+  color: var(--correct);
+}
+button:focus {
+  border: 1px solid transparent !important;
+}
+.neutral {
+  background-color: #454e60 !important;
+}
+button.neutral:focus {
+  background-color: #454e60 !important;
+}
+button.neutral:hover {
+  background-color: #454e6087 !important;
+}
+.dropdown-item:hover {
+  background: var(--disabled);
+  color: #1c2538 !important;
+}
+.current {
+  background: var(--current);
+}
+.border.current {
+  border-color: var(--current) !important;
+}
+.border.wrong {
+  border-color: var(--wrong) !important;
+}
+.border.correct {
+  border-color: var(--correct) !important;
+}
+.circle.current {
+  border: 2px solid var(--current);
+  background: var(--current);
+  color: var(--thm-dark);
+}
+.circle.wrong {
+  border: 2px solid var(--wrong);
+  background: var(--wrong);
+}
+.circle.correct {
+  border: 2px solid var(--correct);
+  background: var(--correct);
+}
+.template.wrong {
+  border: 2px solid var(--wrong);
+}
+.disabled {
+  background: var(--disabled);
+}
+.correct {
+  background: var(--correct);
+}
+.border.disabled {
+  opacity: 0 !important;
+}
+.modal-content {
+  background-color: #161e2d;
+  border: 1px solid white;
+  color: white;
+}
+.modal-header {
+  color: white;
+  border-bottom: 1px solid white;
+}
