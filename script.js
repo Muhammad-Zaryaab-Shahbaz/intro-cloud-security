@@ -5,27 +5,32 @@ const gameOverModal = new bootstrap.Modal(
 );
 
 const options = [
-  { id: 0, name: "Create", hint: "All data is created somewhere." },
+  {
+    id: 0,
+    name: "Create",
+    hint:
+      "It includes the newly created data and data that is being freshly imported from other data sources.",
+  },
   {
     id: 1,
     name: "Store",
-    hint: "It refers to implementing data redundancy and security strategies.",
+    hint: "Data is processed based on its form (structured or unstructured).",
   },
-  { id: 2, name: "Use", hint: "How can we utilise the information?" },
-  { id: 3, name: "Share", hint: "Data is constantly being shared." },
+  { id: 2, name: "Use", hint: "Encrypted data is decrypted in this stage for optimal usage." },
+  { id: 3, name: "Share", hint: "Data is shared within or outside the cloud infra." },
   {
     id: 4,
     name: "Archive",
-    hint: "It is all about storing data after its active life.",
+    hint: "Long term storage of data and applications.",
   },
   {
     id: 5,
     name: "Destroy",
-    hint: "It refers to removal of data from storage and archives.",
+    hint: "Undesired data is shredded/removed.",
   },
 ];
 
-let seconds = 60;
+let seconds = 120;
 let finish = false;
 let lose = false;
 
